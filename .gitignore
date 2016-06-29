@@ -1,0 +1,10 @@
+# TeX files
+*.aux
+*.pdf
+*.log
+*.out
+
+# Assorted directories
+old
+Awesome-CV
+
