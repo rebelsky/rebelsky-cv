@@ -223,7 +223,8 @@
 \newcommand*{\headerquotestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\itshape\color{darktext} #1}}
 \newcommand*{\footerstyle}[1]{{\fontsize{8pt}{1em}\footerfont\scshape\color{lighttext} #1}}
 \newcommand*{\sectionstyle}[1]{{\fontsize{16pt}{1em}\bodyfont\bfseries\color{text}\@sectioncolor #1}}
-\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\scshape\textcolor{text}{#1}}}
+\newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{#1}}}
+\newcommand*{\subsubsectionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
 
 % For elements of entry
@@ -541,9 +542,20 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-3mm}
+  \vspace{-2mm}
   \subsectionstyle{#1}
   \phantomsection
+  \vspace{-2mm}
+}
+
+% Define a subsubsection for CV
+% Usage: \cvsubsubsection{<subsection-title>}
+\newcommand{\cvsubsubsection}[1]{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-1mm}
+  \subsubsectionstyle{#1}
+  \phantomsection
+  \vspace{-3mm}
 }
 
 % Define a paragraph for CV
@@ -598,6 +610,10 @@
 
 \newcommand*{\cventryitems}[1]{%
   {\descriptionstyle{\begin{cvitems}#1\end{cvitems}}}
+}
+
+\newcommand*{\cventrysep}{%
+  \vspace{1.9mm}
 }
 
 % Define an environment for cvsubentry
@@ -664,7 +680,7 @@
 \newenvironment{cvitems}{%
   % \vspace{-4.0mm}
   \begin{justify}
-  \begin{itemize}[leftmargin=4ex, nosep, noitemsep]
+  \begin{itemize}[leftmargin=4ex, rightmargin=4ex, nosep, noitemsep]
     \setlength{\parskip}{0pt}
     \renewcommand{\labelitemi}{\bullet}
 }{%
