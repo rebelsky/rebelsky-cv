@@ -232,7 +232,8 @@
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{text} #1}}
+\newcommand*{\entryposinfostyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{text} #1}}
 \newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
@@ -600,10 +601,14 @@
    \entrytitlestyle{#1} \hfill \entrylocationstyle{#2} \\
 }
 
-\newcommand*{\cventryB}[2]{%
+\newcommand*{\cventryB}[3]{%
   \ifempty{#1}
-    {\hfill \entrydatestyle{#2} \\}
-    {\entrypositionstyle{#1} \hfill \entrydatestyle{#2} \\}
+    {\hfill \entrydatestyle{#3} \\}
+    {\entrypositionstyle{#1}%
+    {\ifempty{#2}
+      {}
+      {, \entryposinfostyle{#2}}}
+    \hfill \entrydatestyle{#3} \\}
     % \vhrulefill{0.1pt} 
 }
 
