@@ -4,6 +4,10 @@
 *.log
 *.out
 
+# BibTeX file
+*.blg
+*.bbl
+
 # Assorted directories
 old
 Awesome-CV
