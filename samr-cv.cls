@@ -82,6 +82,8 @@
 \RequirePackage{marvosym}
 % Using lastpage for page N of M
 \RequirePackage{lastpage}
+% Using labeling from scrextend for the bibliography
+\RequirePackage{scrextend}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -226,13 +228,14 @@
 \newcommand*{\subsectionstyle}[1]{{\fontsize{12pt}{1em}\bodyfont\bfseries\textcolor{text}{#1}}}
 \newcommand*{\subsubsectionstyle}[1]{{\fontsize{11pt}{1em}\bodyfont\bfseries\textcolor{text}{#1}}}
 \newcommand*{\paragraphstyle}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
+\newcommand*{\cvbibstyle}{\fontsize{9pt}{1em}\bodyfont\color{text}}
 
 % For elements of entry
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\entrypositionstyle}[1]{{\fontsize{8pt}{1em}\bodyfont\scshape\color{graytext} #1}}
+\newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{text} #1}}
+\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -689,6 +692,22 @@
   \vspace{-2.0mm}
 }
 
+% Define an environment for bibliography items
+\newenvironment{cvbib}{%
+  \begin{labeling}{M99}
+  \cvbibstyle
+}{%
+  \end{labeling}
+}
+
+% Add an entry in the bibliography.  
+\newcommand*{\cvbibitem}[2]{%
+  \item [{[#1]}] \bibentry{#2} \par
+}
+
+% Note that a co-author is a student or grad student.
+\newcommand*{\student}{\textsuperscript{\ddagger}}
+\newcommand*{\gradstudent}{\textsuperscript{\dagger}}
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
