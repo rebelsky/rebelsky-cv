@@ -12,3 +12,5 @@
 old
 Awesome-CV
 
+# vi tmp files
+*.swp
