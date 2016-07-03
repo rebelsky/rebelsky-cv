@@ -20,9 +20,13 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, letterpaper]{samr-cv}
 
+% Bibliography stuff
+\usepackage{bibentry}
+\usepackage{cite}
+
 % Configure page margins with geometry
 %\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
-\geometry{left=0.75in, top=0.75in, right=0.75in, bottom=1in, footskip=.5in}
+\geometry{left=0.75in, top=0.75in, right=0.75in, bottom=0.75in, footskip=.5in}
 
 % Specify the location of the included fonts
 \fontdir[fonts/]
@@ -66,7 +70,14 @@
 \twitter{rebelsky}
 
 %-------------------------------------------------------------------------------
+
 \begin{document}
+
+\bibliographystyle{plain}
+\begingroup
+\renewcommand{\bibitem}[1]{}%
+\nobibliography{rebelsky}
+\endgroup
 
 \vspace{-0.5in}
 \makecvheader
@@ -85,6 +96,7 @@
 \input{professional.tex}
 \input{honors.tex}
 \input{professional-activities.tex}
+\input{publications.tex}
 %\input{cv/skills.tex}
 %\input{cv/experience.tex}
 %\input{cv/extracurricular.tex}
@@ -93,5 +105,15 @@
 %\input{cv/writing.tex}
 %\input{cv/committees.tex}
 
+%\bibliographystyle{plain}
+%\bibliography{rebelsky.bib}
+
 %-------------------------------------------------------------------------------
+
+\vfill
+\vhrulefill{0.1mm}
+\begin{center}
+{\fontsize{8pt}{1em}\bodyfont\itshape\color{lighttext} The design of this CV is based on Claud D. Park's Awesome-CV, downloaded from
+\href{https://github.com/posquit0/Awesome-CV}{https://github.com/posquit0/Awesome-CV}}
+\end{center}
 \end{document}
