@@ -25,6 +25,7 @@ ENTRY
     booktitle
     chapter
     confdate
+    date
     edition
     editor
     howpublished
@@ -313,6 +314,7 @@ FUNCTION {n.dashify}
 }
 
 FUNCTION {format.date}
+{ date empty$
 { year empty$
     { month empty$
         { "" }
@@ -327,6 +329,9 @@ FUNCTION {format.date}
       if$
     }
   if$
+}
+'date
+if$
 }
 
 FUNCTION {format.btitle}
