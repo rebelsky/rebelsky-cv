@@ -24,6 +24,7 @@ ENTRY
     author
     booktitle
     chapter
+    confdate
     edition
     editor
     howpublished
@@ -493,14 +494,26 @@ FUNCTION {format.proc.date}
             }
           if$
         }
-        { emphasizeic
-          " (" *
-          venue empty$
-            'skip$
-            { venue * ", " * }
+        { confdate empty$
+          { emphasizeic
+            " (" *
+            venue empty$
+              'skip$
+              { venue * ", " * }
+            if$
+            format.date *
+            ")" *
+          }
+          { emphasizeic
+            " (" *
+            venue empty$
+              'skip$
+              { venue * ", " * }
+            if$
+            confdate *
+            ")" *
+          }
           if$
-          format.date *
-          ")" *
         }
       if$
     }
