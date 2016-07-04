@@ -699,6 +699,7 @@
 
 % Define an environment for bibliography items
 \newenvironment{cvbib}{%
+  \vspace{2mm}
   \begin{labeling}{M99}
   \cvbibstyle
 }{%
