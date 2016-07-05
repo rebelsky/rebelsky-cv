@@ -546,10 +546,10 @@
 % Usage: \cvsubsection{<subsection-title>}
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
-  \vspace{-2mm}
+  \vspace{-1mm}
   \subsectionstyle{#1}
   \phantomsection
-  \vspace{-2mm}
+  \vspace{-3mm}
 }
 
 % Define a subsubsection for CV
@@ -603,17 +603,25 @@
 
 \newcommand*{\cventryB}[3]{%
   \ifempty{#1}
-    {\hfill \entrydatestyle{#3} \\}
+    {\hfill \entrydatestyle{#3}}
     {\entrypositionstyle{#1}%
     {\ifempty{#2}
       {}
       {, \entryposinfostyle{#2}}}
-    \hfill \entrydatestyle{#3} \\}
-    % \vhrulefill{0.1pt} 
+    \hfill \entrydatestyle{#3}}
+  \\
 }
 
 \newcommand*{\cventryC}[1]{%
   {\descriptionstyle{\begin{cvitems}\vspace{2mm}#1\end{cvitems}}}
+}
+
+\newcommand{\cvcoursetitle}[1]{%
+  \cventryB{#1}{}{}
+}
+
+\newcommand{\cvcourseinfo}[2]{%
+  \cventryC{#1 --- \textsl{#2}}
 }
 
 \newcommand*{\cventryitems}[1]{%
