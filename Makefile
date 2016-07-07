@@ -3,7 +3,9 @@ CV_FILES = rebelsky-cv-full.tex \
 	honors.tex \
 	professional.tex \
 	publications.tex \
-	research-interests.tex
+	research-interests.tex \
+        research.tex \
+        miscellaneous.tex
 
 default: rebelsky-cv-full.pdf
 
