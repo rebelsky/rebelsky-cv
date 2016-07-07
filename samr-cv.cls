@@ -616,6 +616,12 @@
   {\descriptionstyle{\begin{cvitems}\vspace{2mm}#1\end{cvitems}}}
 }
 
+\newcommand{\cventrypar}[1]{%
+  \begin{justify}
+  {\descriptionstyle{#1}} 
+  \end{justify}
+}
+
 \newcommand{\cvcoursetitle}[1]{%
   \cventryB{#1}{}{}
 }
@@ -708,7 +714,7 @@
 % Define an environment for bibliography items
 \newenvironment{cvbib}{%
   \vspace{2mm}
-  \begin{labeling}{M99}
+  \begin{labeling}{[M99]}
   \cvbibstyle
 }{%
   \end{labeling}
