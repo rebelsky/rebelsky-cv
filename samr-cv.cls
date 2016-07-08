@@ -84,6 +84,8 @@
 \RequirePackage{lastpage}
 % Using labeling from scrextend for the bibliography
 \RequirePackage{scrextend}
+% Needspace helps with keeping section headings in the right place
+\RequirePackage{needspace}
 
 %-------------------------------------------------------------------------------
 %                Configuration for directory locations
@@ -237,7 +239,7 @@
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{text} #1}}
 \newcommand*{\entryposinfostyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
-\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{text} #1}}
+\newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\slshape\color{text} #1}}
 %\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
 \newcommand*{\descriptionstyle}[1]{{\descriptionfont #1}}
 
@@ -550,6 +552,7 @@
 \newcommand{\cvsubsection}[1]{%
   \vspace{\acvSectionContentTopSkip}
   \vspace{-1mm}
+  \needspace{2cm}
   \subsectionstyle{#1}
   \phantomsection
   \vspace{-3mm}
