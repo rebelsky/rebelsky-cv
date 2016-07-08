@@ -1,23 +1,22 @@
-% Copyright (C) 1986, 1988, 2010 Howard Trickey and Oren Patashnik.
-% Modifications Copyright (C) 2016 Samuel A. Rebelsky.
+% samr.bst
+%   Samuel A. Rebelsky's bibliography style for his CV.
+%   Based closely on acm.bst by Howard Trickey and Oren Patashnik.
+%     (Version of 8-Dec-10.)
+%   Version of 2016-07-07.
+
+% New code copyright (c) 2016 Samuel A. Rebelsky.  
+% Original code copyright (c) 1986, 1988, 2010 by Howard Trickey and 
+%   Oren Patashnik.
+%
 % Unlimited copying and redistribution of this file are permitted as long as
 % it is unmodified.  Modifications (and redistribution of modified versions)
 % are also permitted, but only if the resulting file is renamed.
 % 
-% SamR's modified ACM Transactions bibliography style (3-Jul-16 version)
-%    samr.bst is a lot like acm.bst, but it uses venue rather than
-%      address for confrence locations
-%    acm.bst is a lot like abbrv.bst, but names come out "Last, initials", 
-%      and in \sc.
-%    Some dates are parenthesized.
-%
-%    History
-%     2/ 6/86   (HWT)   Original version, by Howard Trickey.
-%     3/ 5/86   (HWT)   Put in pp. everywhere but articles, as per ACM style.
-%     1/24/88   (OP&HWT) Updated for BibTeX version 0.99a, Oren Patashnik;
-%                       corrected the abbreviations to "Mar." and "Sept.";
-%                       THIS `acm' VERSION DOES NOT WORK WITH BIBTEX 0.98i.
-%     12/ 8/10  (OP&HWT) Clarify license.
+% Primary modifications:
+%    Permit a 'date' field to override the existing date.  This can
+%      be useful for conferences and some other situation.
+%    Use 'venue' rather than 'address' for conference locations.
+%    Back to the "First Last" form for names (as in abbrv.bst)
 
 ENTRY
   { address
@@ -107,7 +106,12 @@ FUNCTION {output.bibitem}
 }
 
 FUNCTION {fin.entry}
-{ add.period$
+{  
+% output.state mid.sentence =
+%   { "." write$}
+%   {}
+% if$
+  add.period$
   write$
   newline$
 }
@@ -194,19 +198,49 @@ FUNCTION {scapify}
 
 INTEGERS { nameptr namesleft numnames }
 
+%FUNCTION {format.names}
+%{ 's :=
+%  #1 'nameptr :=
+%  s num.names$ 'numnames :=
+%  numnames 'namesleft :=
+%    { namesleft #0 > }
+%%   { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+%    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
+%      nameptr #1 >
+%        { namesleft #1 >
+%            { ", " * t * }
+%            { t "others" =
+%                { ", et~al." * }
+%                { ", and " * t * }
+%              if$
+%            }
+%          if$
+%        }
+%        't
+%      if$
+%      nameptr #1 + 'nameptr :=
+%      namesleft #1 - 'namesleft :=
+%    }
+%  while$
+%}
+
 FUNCTION {format.names}
 { 's :=
   #1 'nameptr :=
   s num.names$ 'numnames :=
   numnames 'namesleft :=
     { namesleft #0 > }
-    { s nameptr "{vv~}{ll}{, jj}{, f.}" format.name$ 't :=
+    { s nameptr "{ff~}{vv~}{ll}{, jj}" format.name$ 't :=
       nameptr #1 >
         { namesleft #1 >
             { ", " * t * }
-            { t "others" =
-                { ", et~al." * }
-                { ", and " * t * }
+            { numnames #2 >
+                { "," * }
+                'skip$
+              if$
+              t "others" =
+                { " et~al." * }
+                { " and " * t * }
               if$
             }
           if$
