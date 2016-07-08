@@ -629,6 +629,10 @@
   \end{justify}
 }
 
+\newcommand{\cventryNote}{\cventryC}
+\newcommand{\cventryService}{\cventryB}
+\newcommand{\cventryWorkshop}{\cventryB}
+
 \newcommand{\cvcoursetitle}[1]{%
   \cventryB{#1}{}{}
 }
