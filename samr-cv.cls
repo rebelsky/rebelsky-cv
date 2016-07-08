@@ -629,10 +629,41 @@
   \end{justify}
 }
 
+% \cventryNote{note}
+%   A note for a CV entry.  
 \newcommand{\cventryNote}{\cventryC}
+
+% \cventryService{activity}{additional-info}{date}
 \newcommand{\cventryService}{\cventryB}
+
+% \cventryWorkshop{title}{location}{date}
 \newcommand{\cventryWorkshop}{\cventryB}
 
+% \cventryGrant{grant}{additional-info}{date}
+\newcommand{\cventryGrant}{\cventryB}
+
+% \cventryGrantReview{organization}{additional-info}{date}
+\newcommand{\cventryGrantReview}{\cventryB}
+
+% \cventryMembership{organization}{date}
+\newcommand*{\cventryMembership}[2]{\cventryB{#1}{}{#2}}
+
+% \cventryDegree{degree}{note}{date}
+\newcommand{\cventryDegree}{\cventryB}
+
+% \cventryAward{award}{organization}{date}
+\newcommand{\cventryAward}{\cventryB}
+
+% \cventrySupervised{title}{students}{date}
+\newcommand{\cventrySupervised}{\cventryB}
+
+% \cventryIndependent{title}{location}{date}
+\newcommand{\cventryIndependent}{\cventryB}
+
+% \cventrySeminar{title}{location}{date}
+\newcommand{\cventrySeminar}{\cventryB}
+
+% \cvcoursetitle{title}
 \newcommand{\cvcoursetitle}[1]{%
   \cventryB{#1}{}{}
 }
