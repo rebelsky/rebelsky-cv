@@ -231,12 +231,15 @@
 \newcommand*{\cvbibstyle}{\fontsize{9pt}{1em}\bodyfont\color{text}}
 
 % For elements of entry
+\newcommand*{\descriptionfont}{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text}}
+\newcommand*{\paragraphfont}{\fontsize{9pt}{1em}\bodyfont\upshape\color{text}}
 \newcommand*{\entrytitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
 \newcommand*{\entrypositionstyle}[1]{{\fontsize{9pt}{1em}\bodyfont\scshape\color{text} #1}}
 \newcommand*{\entryposinfostyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\entrydatestyle}[1]{{\fontsize{8pt}{1em}\bodyfontlight\slshape\color{graytext} #1}}
 \newcommand*{\entrylocationstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\slshape\color{text} #1}}
-\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{0.9em}\bodyfontlight\upshape\color{text} #1}}
+%\newcommand*{\descriptionstyle}[1]{{\fontsize{9pt}{1em}\bodyfontlight\upshape\color{text} #1}}
+\newcommand*{\descriptionstyle}[1]{{\descriptionfont #1}}
 
 % For elements of subentry
 \newcommand*{\subentrytitlestyle}[1]{{\fontsize{8pt}{1em}\bodyfont\mdseries\color{graytext} #1}}
@@ -618,7 +621,8 @@
 
 \newcommand{\cventrypar}[1]{%
   \begin{justify}
-  {\descriptionstyle{#1}} 
+  \paragraphfont
+  #1
   \end{justify}
 }
 
@@ -722,12 +726,15 @@
 
 % Add an entry in the bibliography.  
 \newcommand*{\cvbibitem}[2]{%
-  \item [{[#1]}] \bibentry{#2} \par
+  \item [{[#1]}] \bibentry{#2}. \par
 }
 
 % Note that a co-author is a student or grad student.
 \newcommand*{\student}{\textsuperscript{\ddagger}}
 \newcommand*{\gradstudent}{\textsuperscript{\dagger}}
+
+% For easier hyper-refs
+\newcommand*{\link}[1]{\href{#1}{\bodyfontlight #1}}
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
@@ -779,3 +786,5 @@
       \letterenclosurestyle{\@letterenclname: \@letterenclosure} \\
     }
 }
+
+
