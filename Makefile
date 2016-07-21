@@ -2,6 +2,7 @@ CV_FILES = rebelsky-cv-full.tex \
 	education.tex \
 	honors.tex \
 	professional.tex \
+        professional-activities.tex \
 	publications.tex \
 	research-interests.tex \
         research.tex \
