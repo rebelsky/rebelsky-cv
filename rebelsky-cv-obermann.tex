@@ -1,0 +1,111 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+% Samuel A. Rebelsky's CV
+%
+% Based on a template downloaded from
+% https://github.com/posquit0/Awesome-CV
+%
+% Original author:
+% Claud D. Park <posquit0.bj@gmail.com>
+% http://www.posquit0.com
+%
+% Template license:
+% CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
+%
+
+
+%-------------------------------------------------------------------------------
+% CONFIGURATIONS
+%-------------------------------------------------------------------------------
+\documentclass[11pt,letterpaper]{samr-cv}
+
+% Bibliography stuff
+\usepackage{bibentry}
+\usepackage{cite}
+
+% Configure page margins with geometry
+%\geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
+\geometry{left=0.75in, top=0.75in, right=0.75in, bottom=1.00in, footskip=.25in}
+
+% Specify the location of the included fonts
+\fontdir[fonts/]
+
+% Color for highlights
+% Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
+%                 awesome-nephritis, awesome-concrete, awesome-darknight
+%\colorlet{awesome}{awesome-red}
+% Uncomment if you would like to specify your own color
+\definecolor{awesome}{HTML}{000000}
+
+% Colors for text
+% Uncomment if you would like to specify your own color
+% \definecolor{darktext}{HTML}{414141}
+% \definecolor{text}{HTML}{333333}
+% \definecolor{graytext}{HTML}{5D5D5D}
+% \definecolor{lighttext}{HTML}{999999}
+
+% Set false if you don't want to highlight section with awesome color
+\setbool{acvSectionColorHighlight}{false}
+
+% If you would like to change the social information separator from a pipe (|) to something else
+\renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
+
+
+%-------------------------------------------------------------------------------
+%	PERSONAL INFORMATION
+%	Comment any of the lines below if they are not required
+%-------------------------------------------------------------------------------
+\name{Samuel A.}{Rebelsky}
+\position{Professor of Computer Science}
+\address{Grinnell College, 1116 8th Avenue, Grinnell, IA 50112, USA}
+
+\phone{641-269-4410}
+\faxnumber{641-269-4285}
+\mobile{641-990-2947}
+\email{rebelsky@grinnell.edu}
+\homepage{http://www.cs.grinnell.edu/\textasciitilde{}rebelsky/}
+\homepageaddress{http://www.cs.grinnell.edu/~rebelsky/}
+\github{rebelsky}
+\twitter{rebelsky}
+
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\bibliographystyle{samr}
+\begingroup
+\renewcommand{\bibitem}[1]{}%
+\nobibliography{rebelsky}
+\endgroup
+
+\vspace{-0.5in}
+\makecvheader
+
+\makecvfooter
+  {\today}
+  {Samuel A. Rebelsky~~~·~~~Curriculum Vitae}
+  {\thepage\ of \pageref{LastPage}}
+
+%-------------------------------------------------------------------------------
+%	CV/RESUME CONTENT
+%	Each section is imported separately, open each file in turn to modify content
+%-------------------------------------------------------------------------------
+
+\input{research-interests.tex}
+\input{education.tex}
+\input{professional-grinnell.tex}
+\input{obermann/professional-activities.tex}
+\input{obermann/publications.tex}
+\input{obermann/teaching.tex}
+\input{obermann/service.tex}
+
+%-------------------------------------------------------------------------------
+
+\vfill
+\vhrulefill{0.1mm}
+\begin{center}
+\fontsize{8pt}{1em}\bodyfont\itshape\color{lighttext} The design of this CV is based on Claud D. Park's Awesome-CV, downloaded from
+\link{https://github.com/posquit0/Awesome-CV}. \\
+ The source for this CV can be found online at \link{https://github.com/rebelsky/rebelsky-cv/}. \\
+\end{center}
+\end{document}
