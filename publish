@@ -1,0 +1,5 @@
+#!/bin/bash
+
+rsync -avz rebelsky-cv-full.pdf index.html /home/rebelsky/public_html/CV
+
+time rsync -avz rebelsky-cv-full.pdf index.html rebelsky.cs.grinnell.edu:/home/rebelsky/public_html/CV
