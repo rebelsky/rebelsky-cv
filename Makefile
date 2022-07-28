@@ -6,6 +6,7 @@ CV_FILES = rebelsky-cv-full.tex \
 	publications.tex \
 	research-interests.tex \
         research.tex \
+        teaching.tex \
         miscellaneous.tex
 
 default: rebelsky-cv-full.pdf
