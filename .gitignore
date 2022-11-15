@@ -11,6 +11,7 @@
 # Assorted directories
 old
 Awesome-CV
+fonts
 
 # vi tmp files
 *.swp
