@@ -179,7 +179,7 @@
 \newfontfamily\footerfont[
   Path=\@fontdir,
   UprightFont=*-Regular,
-  ItalicFont=*-It,
+  ItalicFont=*-Italic,
   BoldFont=*-Bold
 ]{SourceSansPro}
 
@@ -187,26 +187,26 @@
 \newfontfamily\bodyfont[
   Path=\@fontdir,
   UprightFont=*-Regular,
-  ItalicFont=*-It,
+  ItalicFont=*-Italic,
   BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt
+  BoldItalicFont=*-BoldItalic
 ]{SourceSansPro}
 
 \newfontfamily\bodyfontlight[
   Path=\@fontdir,
   UprightFont=*-Light,
-  ItalicFont=*-LightIt,
+  ItalicFont=*-LightItalic,
   BoldFont=*-Semibold,
-  BoldItalicFont=*-SemiboldIt
+  BoldItalicFont=*-SemiboldItalic
 ]{SourceSansPro}
 
 % Set main font
 \setmainfont[
   Path=\@fontdir,
   UprightFont=*-Regular,
-  ItalicFont=*-It,
+  ItalicFont=*-Italic,
   BoldFont=*-Bold,
-  BoldItalicFont=*-BoldIt
+  BoldItalicFont=*-BoldItalic
 ]{SourceSansPro}
 
 
@@ -769,8 +769,8 @@
 }
 
 % Note that a co-author is a student or grad student.
-\newcommand*{\student}{\textsuperscript{\ddagger}}
-\newcommand*{\gradstudent}{\textsuperscript{\dagger}}
+\newcommand*{\student}{\textsuperscript{$\ddagger$}}
+\newcommand*{\gradstudent}{\textsuperscript{$\dagger$}}
 
 % For easier hyper-refs
 \newcommand*{\link}[1]{\href{#1}{\bodyfontlight #1}}
