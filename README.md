@@ -1,6 +1,6 @@
 # rebelsky-cv
 
-This repository contains Samuel A. Rebelksy's curriculum vitae and some
+This repository contains Samuel A. Rebelsky's curriculum vitae and some
 other related files.
 
 I will admit that the work does not quite meet my standards.  I had planned
