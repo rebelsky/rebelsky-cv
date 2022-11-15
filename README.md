@@ -11,3 +11,10 @@ CV at Chicago and Dartmouth to an HTML CV at Grinnell, and moving back to
 LaTeX required more effort than I had planned.
 
 Maybe it will get better over time :-).
+
+---
+
+## Notes
+
+Make sure to make a fonts directory and then copy fonts from Awesome-CV 
+and SourceSansPro into that directory.  (At least on the Mac.)
