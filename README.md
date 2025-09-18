@@ -17,4 +17,5 @@ Maybe it will get better over time :-).
 ## Notes
 
 Make sure to make a fonts directory and then copy fonts from Awesome-CV 
-and SourceSansPro into that directory.  (At least on the Mac.)
+and SourceSansPro into that directory. (At least on the Mac.) On the
+Mac, you may also need to installthe fonts into FontBook.
